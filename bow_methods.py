@@ -1,5 +1,5 @@
 import math
-import statistics
+from utils import get_word_freq
 
 def jaccard_index(dist1, dist2):
   # Extract the unique words from each distribution
@@ -93,3 +93,8 @@ def print_all(dict1, dict2):
   print("Cosine similarity: (1 - best, 0 - worst) ", cosine_similarity(dict1, dict2))
   print("KL divergence: (0 - best, ∞ - worst ) ", kl_divergence(dict1, dict2))
   print("Euclidean distance: (0 - best, ∞ - worst )", euclidean_distance(dict1, dict2))
+
+def get_similarity(text1, text2):
+    dict1 = get_word_freq(text1)
+    dict2 = get_word_freq(text2)
+    return print_all(dict1, dict2)
