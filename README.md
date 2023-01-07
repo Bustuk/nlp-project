@@ -15,6 +15,23 @@ Methods used:
  WMD is based on the idea of "earth mover's distance", which is a measure of the distance between two probability distributions. In the context of WMD, the probability distributions are represented by the words in the two documents, and the distance between the distributions is the minimum amount of "work" that would be required to transform one distribution into the other. This "work" is defined as the sum of the distances that each word in the first document would need to "travel" in order to become the corresponding word in the second document.
  For this method we will be using Word2vec Model pretrained by Google - it requires downloading over 1,5GB model so this methods should require additional acceptance
 
+How to run:
+1. Create virtual environemnt
+```bash
+python -m venv myenv
+```
+2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+3. Activate environment
+```bash
+source myenv/bin/activate
+```
+4. Run example
+```bash
+python example.py
+```
 
 Example code can be found in example.py. Output for example code:
 
