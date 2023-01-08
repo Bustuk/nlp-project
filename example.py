@@ -5,28 +5,28 @@ text2 = "Completely diffferent no words in common. It has nothing in common with
 text3 = "This is another text. It's somehow similar to the first text but also have something in common with the other"
 
 print('Do you want to use WMD method? It requires downloading a google model (over 1,5GB). (y/n)')
-x = input()
-loadWMD = x == 'y'
-if loadWMD:
+loadWMD = input()
+useWMD = loadWMD == 'y'
+if useWMD:
     wmd = WMD()
 
 print('Same text')
 print('-----------------------')
 get_similarity(text1, text1)
-if loadWMD:
+if useWMD:
     wmd.get_similarity(text1, text1)
 print('-----------------------')
 
 print('Different text')
 print('-----------------------')
 get_similarity(text1, text2)
-if loadWMD:
+if useWMD:
     wmd.get_similarity(text1, text2)
 print('-----------------------')
 
 print('Similar text')
 print('-----------------------')
 get_similarity(text2, text3)
-if loadWMD:
+if useWMD:
     wmd.get_similarity(text2, text3)
 print('-----------------------')

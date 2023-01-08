@@ -17,37 +17,6 @@ def jaccard_index(dist1, dist2):
   
   return jaccard_index
 
-# def cosine_similarity(dist1, dist2):
-#   # Extract the unique words from each distribution
-#   words1 = set(dist1.keys())
-#   words2 = set(dist2.keys())
-  
-#   # Find the intersection of the two sets of words
-#   common = words1.intersection(words2)
-  
-#   # Calculate the dot product of the two distributions
-#   dot_product = sum(dist1[word] * dist2[word] for word in common)
-  
-#   # Calculate the magnitudes of the two distributions
-#   magnitude1 = math.sqrt(sum(dist1[word] ** 2 for word in words1))
-#   magnitude2 = math.sqrt(sum(dist2[word] ** 2 for word in words2))
-  
-#   # Calculate the cosine similarity
-#   similarity = dot_product / (magnitude1 * magnitude2)
-  
-#   return similarity
-
-def cosine_similarity(dic1,dic2):
-    numerator = 0
-    dena = 0
-    for key1,val1 in dic1.items():
-        numerator += val1*dic2.get(key1,0.0)
-        dena += val1*val1
-    denb = 0
-    for val2 in dic2.values():
-        denb += val2*val2
-    return numerator/math.sqrt(dena*denb)
-
 def kl_divergence(dict1, dict2):
   # Initialize the KL divergence to 0
   kl_div = 0
@@ -64,6 +33,17 @@ def kl_divergence(dict1, dict2):
 
   # Return the KL divergence
   return kl_div
+
+def cosine_similarity(dic1,dic2):
+    numerator = 0
+    dena = 0
+    for key1,val1 in dic1.items():
+        numerator += val1*dic2.get(key1,0.0)
+        dena += val1*val1
+    denb = 0
+    for val2 in dic2.values():
+        denb += val2*val2
+    return numerator/math.sqrt(dena*denb)
 
 def euclidean_distance(dict1, dict2):
   # Initialize the sum of squared differences to 0
